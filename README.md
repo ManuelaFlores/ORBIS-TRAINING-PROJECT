@@ -3,3 +3,6 @@ Capacitación: Git, bash y Docker
 Integrantes: 
  - Pedro Vega Asto.
  - Manuela Flores Vilchez.
+ - Jan Sanchez
+
+
