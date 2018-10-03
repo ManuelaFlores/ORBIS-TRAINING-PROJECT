@@ -39,3 +39,38 @@ git push origin --tags
 9. ¿Qué pasa si creo una imagen sin especificar una versión o tag, con qué versión se crea?
 
  - Se tomas como si fuera la última versión(lastest).
+
+ -- -
+ # Segundo Taller : 
+
+1.- ¿Porqué es necesario crear un contenedor con esta bandera -it ? ¿Qué pasa si no le pongo -it?
+ - Porque nos habilita el modo interactivo y la consola TTY del contenedor(es necesario los dos). Si no le ponemos el flag -it se el container se ejecuta y muere.
+2.- ¿Para qué sirve ejecutar el comando bash al ejecutar una imagen?
+ - Para interactuar y ejecutar comandos de linux.
+
+ 3.-¿Cuál es la diferencia entre docker ps y docker ps -a?
+ - Docker ps lista los contenedores que estan encendidos y docker ps -a lista todos los contenedores independientemente de si estén activos o no.
+ 
+ ## PARTE 5 
+ 1. ¿Cuál es la diferencia entre una imagen y un contenedor?
+  - La imagen es la base para construir un contenedor
+
+2. ¿Cómo listo las imágenes que hay en mi computadora?
+ - Docker images
+
+3. ¿Cómo salgo de un contenedor de docker?
+ - exit
+
+4. ¿Se elimina el contenedor al salir de ella?
+ - Sí
+5. ¿Cómo elimino un contenedor?
+ - docker kill + id del contenedor
+6. ¿Para qué es necesario el flag `-i`, `-t`, `--rm`?
+ - -i : Activar el modo interactivo-
+ - -t : Para que se active la consola del contenedor.
+ - --rm : Para eliminar el contenedor.
+
+7. ¿Cómo verifico que el archivo creado se encuentra en la imagen?
+ - Podría escribir en el docker file que se liste el archivo ó podría entrar al contenedor y ejecutar los comandos de linux.
+8. ¿Cómo se comenta una linea de código en Dockerfile?
+- El simbolo se comenta con "#" 
