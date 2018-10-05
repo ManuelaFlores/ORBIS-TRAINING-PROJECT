@@ -90,4 +90,47 @@ git push origin --tags
 
 1.- ¿Qué pasa si no especifico el directorio de trabajo?
 
- - Va a tomar la ruta del archivo dockerfile y al no encontrar nada, no se ejecutá el comando 
+ - Va a tomar la ruta del archivo dockerfile y al no encontrar nada, no se ejecutá el comando
+
+2. ¿Es necesario especificar el `workdir` en docker?, ¿Porqué?
+ - Sí , es necesario porque si no el proyecto no tendría una carpeta base.
+
+3. ¿Que hacen los siguientes comandos? 
+ -`docker ps`
+  - Lista los contenedores que están levantados.
+
+ -`docker pull`
+  - Baja una imagen del dockerhub
+
+ -`docker push`
+  - Sube los cambios en la imagen al dockerhub
+
+ -`docker rm`
+  - Remueve los contenedores.
+
+ -`docker rmi`
+  - Remueve las imágenes.
+
+ -`docker run`
+  - Levanta un container.
+
+ -`docker tag`
+  - Cambia el tag.
+
+ -`docker search`
+  - Buscamos imágenes en el dockerhub. 
+
+ -`docker login`
+  - Iniciamos sesión en dockerhub.
+
+ -`docker exec`
+  - Ejecutamos comandos de un container encendido.
+
+ -`docker build`
+  - Construimos una imagen.
+
+ -`docker inspect`
+  - Inspeccionamos el contenido de un container.
+
+ -`docker network`
+  - Permite administrar una red dentro de docker.
