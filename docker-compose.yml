@@ -10,3 +10,9 @@ services:
   command: npm start
   volumes:
    - $PWD:/app
+
+ test:
+  image: node:10.10.0-slim
+  depends_on:
+   - node
+  command: curl node:1042

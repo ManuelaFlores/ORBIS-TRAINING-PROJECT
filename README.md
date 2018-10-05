@@ -42,5 +42,42 @@ docker-compose up
 docker run -it -v $PWD:/app -p "3030:1042" manuelaflores16/orbis-training-docker:4.0.0 npm start   
 ````
 
+## Ejecuta el realease 
+
+````
+docker run -it -v $PWD:/app -p "3030:1042" manuelaflores16/orbis-training-docker:4.0.0 npm run release 
+````
+
+## Para encontrar la IP del container y la red asignada por default
+
+````
+docker inspect a51 | grep "IPAdress"
+docker inspect 051 | grep "Network"
+````
+## Para ejecutar un curl en el container
+
+````
+docker run --net=capacitacion-problema1_default -it node:10.10.0-slim curl http://172.18.0.2:1042
+````
+
+## Para ejecutar el archivo example.sh
+
+````
+docker run --entrypoint=/app/resources/example.sh -it -v $PWD:/app manuelaflores16/orbis-training-docker:4.0.0   
+````
+
+## Para ejecutar el archivo example.sh con un entorno de variable 
+
+````
+docker run --entrypoint=/app/resources/example.sh -it -v $PWD:/app -e NAME="Manuela" manuelaflores16/orbis-training-docker:4.0.0   
+````
+
+
+
+
+
+
+
+
 
 

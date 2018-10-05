@@ -133,4 +133,33 @@ git push origin --tags
   - Inspeccionamos el contenido de un container.
 
  -`docker network`
-  - Permite administrar una red dentro de docker.
+  - Permite administrar una red dentro de docker.doc
+
+  ## PARTE 8
+
+1. ¿Qué es bash? ¿Qué significa?
+ - Es un programa informático , significa que puede ejecutar lineas de comando en modo consola.
+
+2. ¿Cómo ejecuto un archivo bash?
+ - ./<path ó ruta>/<nombre del archivo.sh>
+
+3. ¿Qué pasa si no especifico en un `.sh`, la linea `#!/bin/bash`?
+ - No se ejecuta.
+
+4. ¿Se puede cambiar el modo bash (`/bin/bash`) a otro tipo de ejecución?
+ - Si se puede , pero también se debe cambiar la extensión del archivo.
+
+5. ¿Cómo se envía variables de entorno por Docker CLI y docker-compose?
+
+ - En el docker CLI con el flag:
+ ````
+  -e <nombre de la variable>='valor asignado'
+  ````
+
+  - En docker-compose escribiendo : 
+  ````
+  services : 
+   node:
+    environment:
+     - <nombre de la variable>: <valor asignado>
+````
