@@ -39,7 +39,7 @@ docker-compose up
 ## Para levantar el container y exponerlo en el puerto 3030
 
 ````
-docker run -it -v $PWD:/app -p "3030:3030" manuelaflores16/orbis-training-docker:4.0.0 npm start   
+docker run -it -v $PWD:/app -p "3030:1042" manuelaflores16/orbis-training-docker:4.0.0 npm start   
 ````
 
 
