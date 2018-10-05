@@ -74,3 +74,14 @@ git push origin --tags
  - Podría escribir en el docker file que se liste el archivo ó podría entrar al contenedor y ejecutar los comandos de linux.
 8. ¿Cómo se comenta una linea de código en Dockerfile?
 - El simbolo se comenta con "#" 
+
+## PARTE 6
+
+1. ¿Qué es NGINX?
+ - Un servidor web
+2. ¿Cómo expongo puertos en docker?
+ - En el dockerfile tenemos que agregar "EXPOSE" seguido del numero de puesto.
+3. ¿Cómo especifico los puertos al levantar un contenedor (docker run)?
+ "<puerto a exponer>:<puerto del servicio>"
+4. ¿Cómo hago 'forward' al levantar un contenedor (docker run)?
+ - Con el flag "-p"
