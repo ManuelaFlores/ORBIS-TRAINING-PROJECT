@@ -85,3 +85,9 @@ git push origin --tags
  "<puerto a exponer>:<puerto del servicio>"
 4. ¿Cómo hago 'forward' al levantar un contenedor (docker run)?
  - Con el flag "-p"
+
+ ## PARTE 7
+
+1.- ¿Qué pasa si no especifico el directorio de trabajo?
+
+ - Va a tomar la ruta del archivo dockerfile y al no encontrar nada, no se ejecutá el comando 

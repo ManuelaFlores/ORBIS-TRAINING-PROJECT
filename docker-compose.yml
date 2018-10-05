@@ -2,7 +2,7 @@ version: "3"
 services:
  nginx:
   container_name: Manuela
-  image: manuelaflores16/orbis-training-docker:3.0.0
+  image: manuelaflores16/orbis-training-docker:4.0.0
   build: .
   ports:
    - 1080:80

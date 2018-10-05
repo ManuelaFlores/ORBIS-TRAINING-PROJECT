@@ -30,3 +30,10 @@ docker-compose build
 docker-compose up
 ````
 
+## Para llevar el contenido de mi proyecto al container
+
+ ````
+ docker run -it -v $PWD:/app manuelaflores16/orbis-training-docker:4.0.0 sh -c "npm install && ls"
+````
+
+
