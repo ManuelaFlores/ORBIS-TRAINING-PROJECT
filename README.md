@@ -13,3 +13,20 @@ docker push manuelaflores16/orbis-training-docker:0.1.0
 docker tag 2ed242f0459b manuelaflores16/orbis-training-docker:0.2.0  
 ```
 
+## **Para exponer el contenedor a travéz del puerto 1080**
+
+```
+docker run -p "1080:80" manuelaflores16/orbis-training-docker:3.0.0
+```
+## **Para construir la imagen basada en un archivo docker-compose**
+
+````
+docker-compose build
+````
+
+## **Para levantar el contenedor basado en un archivo docker-compose**
+
+````
+docker-compose up
+````
+
