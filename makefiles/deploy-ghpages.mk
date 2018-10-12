@@ -3,11 +3,11 @@
 DEPLOY_DIR = deploy
 BUILD_DIR = build
 GIT_BRANCH = gh-pages
-GIT_PERSONAL_TOKEN = dc72eb7af5956ce82df3d25d9881299ac1a2abf6 
+GIT_PERSONAL_TOKEN = dc72eb7af5956ce82df3d25d9881299ac1a2abf6
 GIT_BRANCH_DIR = $(PWD)/$(DEPLOY_DIR)/$(GIT_BRANCH)
 
 define mkdir_deploy_dir
-    @if [ ! -d "$(GIT_BRANCH_DIR)" ]; then mkdir $(GIT_BRANCH_DIR); fi
+	@if [ ! -d "$(GIT_BRANCH_DIR)" ]; then mkdir $(GIT_BRANCH_DIR); fi
 endef
 
 define git_init
@@ -52,4 +52,34 @@ define create_commit
      git commit -m "$(MESSAGE)"
 endef
 
+define show_deploy_url
+    $(eval GIT_REPOSITORY_REMOTE := $(shell git remote -v | grep origin | grep '(push)'| awk '{print $2}'))
+    $(eval GIT_REPOSITORY_REMOTE_SSH := $(shell echo '$(GIT_REPOSITORY_REMOTE)' | grep 'git@'))
 
+    $(ifeq ($(strip $(GIT_REPOSITORY_REMOTE_SSH)),), \
+        $(eval GIT_USER_NAME := $(shell echo '$(GIT_REPOSITORY_REMOTE)' | cut -d "/" -f 1 | cut -d ":" -f 2)), \
+        $(eval GIT_USER_NAME := $(shell echo '$(GIT_REPOSITORY_REMOTE)' | cut -d "/" -f 4)) \
+    )
+
+    $(ifeq ($(strip $(GIT_REPOSITORY_REMOTE_SSH)),), \
+        $(eval GIT_REPOSITORY_NAME := $(shell echo '$(GIT_REPOSITORY_REMOTE)' | cut -d "/" -f 2)), \
+        $(eval GIT_REPOSITORY_NAME := $(shell echo '$(GIT_REPOSITORY_REMOTE)' | cut -d "/" -f 5 | sed "s/.git//g" | sed "s/(push)//g")) \
+    )
+
+    @echo ""
+    @echo "Publicado en: http://$(GIT_USER_NAME).github.io/$(GIT_REPOSITORY_NAME)"
+    @echo ""
+endef
+
+deploy.ghpages:
+	$(call mkdir_deploy_dir)
+	$(call git_init)
+	$(call git_config)
+	$(call git_add_remote_repository)
+	$(call create_branch_gh_pages)
+	$(call copy_files_to_deploy)
+	$(call git_add)
+	$(call create_commit)
+	$(call git_push)
+	$(call clean_workspace)
+	$(call show_deploy_url)

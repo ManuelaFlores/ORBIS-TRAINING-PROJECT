@@ -237,5 +237,9 @@ el comando en ejecución en consola; finalmente se hace la configuracion de usua
  19.- Explicar lo que hace la función git_add
  - Esta función entra en el directorio del proyecto , luego agrega todos los archivos al staged area para despues hacer un git status.
 
- 20.-
+ 20.-¿Para qué sirve el uso de ifeq?
+  - condicional
+21.-¿Para qué sirve el uso de strip?
+  strip - Discard symbols from object files.  
+22.- Explicar lo que hace la función show_deploy_url (línea por línea)
 

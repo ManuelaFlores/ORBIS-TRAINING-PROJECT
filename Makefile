@@ -1,4 +1,4 @@
-include makefiles/task.mk 
+include makefiles/task.mk makefiles/deploy-ghpages.mk
 
 ## DEPLOY ##
 
