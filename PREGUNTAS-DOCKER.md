@@ -177,4 +177,29 @@ git push origin --tags
 3. ¿Qué es un `target` en `Makefile`?
 
  - Un target es el nombre que le asignamos a una o varias líneas de comando. 
- 
+
+## PARTE 10 
+
+1.-¿Qué significa el comando -d?
+ - Especifica el directorio.
+
+2.-¿Porqué la sentencia comienza con @?
+ - Para que no se vea en consola el comando que se está ejecutando.
+
+3.-¿Para qué sirve el comando mkdir?
+ - Para crear un archivo.
+
+4.-Explicar lo que hace la función mkdir_deploy_dir
+ - Valida si una carpeta está creada, si no la crea.
+
+5.- ¿Para qué sirve el uso de \?
+ - Para hacer un salto de linea.
+
+¿Para qué sirve el uso de &&?
+ - Para ejecutar una instrucción después de otra.
+
+¿Qué función cumple usar los argumentos -rf?
+ - Es el recursivo forzado.
+
+Explicar lo que hace la función git_init (linea por linea)
+- Se situa en la carpeta del proyecto , borra la carpeta .git e inicializa la carpeta.

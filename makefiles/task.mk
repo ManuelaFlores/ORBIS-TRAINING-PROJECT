@@ -10,3 +10,6 @@ up:
 
 login: 
 	docker login
+
+stop:
+	docker stop Manuela
