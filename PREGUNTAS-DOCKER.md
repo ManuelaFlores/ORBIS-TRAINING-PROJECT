@@ -163,3 +163,18 @@ git push origin --tags
     environment:
      - <nombre de la variable>: <valor asignado>
 ````
+
+## PARTE 9 
+
+1.- ¿Qué sucede si le quito el @?
+
+ - Se observa la línea del comando que se está ejecutando.
+
+2. ¿Para qué sirve el archivo `Makefile`?
+
+ - Para ejecutar lineas de código a través de targets.
+
+3. ¿Qué es un `target` en `Makefile`?
+
+ - Un target es el nombre que le asignamos a una o varias líneas de comando. 
+ 
