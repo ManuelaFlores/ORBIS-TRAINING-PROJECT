@@ -195,11 +195,47 @@ git push origin --tags
 5.- ¿Para qué sirve el uso de \?
  - Para hacer un salto de linea.
 
-¿Para qué sirve el uso de &&?
+6.- ¿Para qué sirve el uso de &&?
  - Para ejecutar una instrucción después de otra.
 
-¿Qué función cumple usar los argumentos -rf?
+7.- ¿Qué función cumple usar los argumentos -rf?
  - Es el recursivo forzado.
 
-Explicar lo que hace la función git_init (linea por linea)
+8.- Explicar lo que hace la función git_init (linea por linea)
 - Se situa en la carpeta del proyecto , borra la carpeta .git e inicializa la carpeta.
+
+9.- ¿Para qué sirve el uso de eval?
+ - Sirve para ejecutar un comando de alamcenamiento en una variable 
+
+10.- ¿Para qué sirve el uso de shell?
+ - Para que se interprete como comando shell en el makefile
+11.- ¿Para qué sirve el uso de git log --pretty=format:"%an"?
+ - Git log lista el historial de los commits , el pretty format muestra campos especificos (el an nos muestra el nombre del autor).
+
+12.- ¿Cuál es la diferencia en usar git config y git config --global?
+- El git config es para un solo proyecto , y el git config global hace la configuración de git de manera global.
+
+13.- Explicar lo que hace la función git_config (línea por línea)
+- En las dos primeras líneas se estan declarando variables, luego se ingresa a la carpeta del proyecto pero no se muestra
+el comando en ejecución en consola; finalmente se hace la configuracion de usuario y del email utilizando las variables declaradas arriba.
+
+14.- ¿Para qué sirve el uso de awk?
+- Es un lenguaje de programación diseñado para procesar datos basados en texto.
+
+15.- ¿Para qué sirve el uso de sed?
+- Hace un remplazo de lo que se encuentra dentro de las comillas, modifica el contenido.
+
+16.- Explicar lo que hace la función git_add_remote_repository
+- Primero guarda en una variable el nombre del repositorio remoto del push, luego busca y reemplaza , para entrara en la carpeta del proyecto y enlazar el local con el remoto.
+
+17.- Explicar lo que hace la función create_branch_gh_pages
+ - Primero entra en la carpeta del proyecto , luego crea y te posiciona en una rama con el nombre de la variable.
+
+ 18.- Explicar lo que hace la función copy_files_to_deploy
+ -  Copia todos los archivos de la ruta del deploy hacia el directorio del proyecto.
+
+ 19.- Explicar lo que hace la función git_add
+ - Esta función entra en el directorio del proyecto , luego agrega todos los archivos al staged area para despues hacer un git status.
+
+ 20.-
+
