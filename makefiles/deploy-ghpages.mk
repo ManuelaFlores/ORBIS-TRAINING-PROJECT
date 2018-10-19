@@ -3,7 +3,7 @@
 DEPLOY_DIR = deploy
 BUILD_DIR = build
 GIT_BRANCH = gh-pages
-GIT_PERSONAL_TOKEN = dc72eb7af5956ce82df3d25d9881299ac1a2abf6
+GIT_PERSONAL_TOKEN = 3e87cf9d20e57644c36a535b1bfd03bcf17a0714
 GIT_BRANCH_DIR = $(PWD)/$(DEPLOY_DIR)/$(GIT_BRANCH)
 
 define mkdir_deploy_dir
@@ -50,6 +50,15 @@ define create_commit
     $(eval MESSAGE := $(shell git log --pretty=format:"%s" | head -n 1))
     @cd $(GIT_BRANCH_DIR) && \
      git commit -m "$(MESSAGE)"
+endef
+
+define git_push
+    @cd $(GIT_BRANCH_DIR) && \
+     git push origin $(GIT_BRANCH) --force
+endef
+
+define clean_workspace
+    @rm -rf $(GIT_BRANCH_DIR)
 endef
 
 define show_deploy_url
