@@ -1,7 +1,8 @@
 .PHONY: docker
 
-VOLUMEN_DOCKER = volumen_docker_end
-NETWORK_NAME = red_docker_end
+VOLUMEN_DOCKER = volumen_docker_f
+NETWORK_NAME = red_docker_f
+JENKINS_NAME = jenkins_name_f
 
 docker-workspace:
 	echo "create docker worspace"
@@ -15,7 +16,7 @@ docker-install:
 docker-start:
 	#docker network rm ${NETWORK_NAME}
 	docker network create ${NETWORK_NAME}
-	docker rm -f jenkins_name2
-	docker run -d --net=${NETWORK_NAME} --name jenkins_name2 \
+	docker rm -f ${JENKINS_NAME}
+	docker run -d --net=${NETWORK_NAME} --name ${JENKINS_NAME} \
 	-p 3030:1042 --volumes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm start
 
