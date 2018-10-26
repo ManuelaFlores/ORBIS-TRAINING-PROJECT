@@ -16,7 +16,7 @@ start:
 	docker run -it -v ${PWD}:/app -p "3030:1042" ${DOCKER_IMAGE} npm start   
 
 release:
-	docker run -it -v ${PWD}:/app -p "3030:1042" ${DOCKER_IMAGE} npm run release 
+	docker run -it --rm --tty=false -v ${PWD}:/app -p "3030:1042" ${DOCKER_IMAGE} npm run release 
 
 greet:
 	docker run --entrypoint=/app/resources/example.sh -it -v ${PWD}:/app -e NAME=${NAME} ${DOCKER_IMAGE}
