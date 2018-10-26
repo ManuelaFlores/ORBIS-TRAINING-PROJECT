@@ -1,7 +1,7 @@
 .PHONY: docker
 
-VOLUMEN_DOCKER = volumen_docker2
-NETWORK_NAME = red_docker2
+VOLUMEN_DOCKER = volumen_docker_end
+NETWORK_NAME = red_docker_end
 
 docker-workspace:
 	echo "create docker worspace"
