@@ -15,6 +15,6 @@ docker-install:
 docker-start:
 	docker network rm ${NETWORK_NAME}
 	docker network create ${NETWORK_NAME}
-	docker run -t  --rm --net=${NETWORK_NAME} --name jenkins_name \
-	-p "3030:1042" --volumes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm start
+	docker run -d --net=${NETWORK_NAME} --name jenkins_name \
+	-p 3030:1042 --volumes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm start
 
