@@ -8,4 +8,4 @@ docker-workspace:
 	docker cp ./ ${VOLUMEN_DOCKER}:/app
 
 docker-install:
-	docker run -t --rm --volumenes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm install
+	docker run -t --rm --volumes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm install
