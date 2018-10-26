@@ -11,11 +11,15 @@ pipeline {
         stage('Test') {
             steps {
                 echo "test"
+                sh "make docker-start"
+                echo "falta el curl"
             }
         }
         stage('Deploy') {
             steps {
                 echo "deploy"
+                sh "make release"
+                sh "make deploy.ghpages"
             }
         }
     }
