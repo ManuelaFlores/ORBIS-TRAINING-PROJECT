@@ -237,5 +237,73 @@ el comando en ejecución en consola; finalmente se hace la configuracion de usua
  19.- Explicar lo que hace la función git_add
  - Esta función entra en el directorio del proyecto , luego agrega todos los archivos al staged area para despues hacer un git status.
 
- 20.-
+ 20.-Explicar lo que hace la función create_commit (línea por línea)
+ - Extrae el primer contenido de la lista de los mensajes de los commits.
+
+ 21.-Explicar lo que hace la función git_push (línea por línea)
+- Entra a la ruta donde se encuentra el proyecto (en local ) y luego hace un git push forzado.
+
+22.-Explicar lo que hace la función clean_workspace
+- Borra todo el contenido de manera recursiva y forzada del repositorio local
+
+23.-¿Para qué sirve el uso de ifeq?
+- Es una condicional que permite comparar un resultado.
+
+24.-¿Para qué sirve el uso de strip?
+-Compara cadenas y limpiando los espacios en blanco.
+
+25.-Explicar lo que hace la función show_deploy_url (línea por línea)
+-Guarda el nombre de usuario de GitHub , El nombre del proyecto y la url , para mostrarlo cuando publique la página.
+
+26.-¿Qué hace cada paso?
+
+$(call mkdir_deploy_dir) : Crea el workspace.
+$(call git_init) : Inicializa el repositorio.
+$(call git_config) : Configura el git.
+$(call git_add_remote_repository) : Enlaza el repositorio local con el remoto.
+$(call create_branch_gh_pages) : Crea la rama ghpages.
+$(call copy_files_to_deploy) : Copia los archivos a desplegar.
+$(call git_add) : Agrega los cambios.
+$(call create_commit) : Crea un nuevo commit.
+$(call git_push) : Ejecuta un push.
+$(call clean_workspace) : Limpia el workspace.
+$(call show_deploy_url) : Muestra la url del proyecto desplegado.
+
+## PARTE 11:
+
+1.- ¿Que sucede si no volumeo el docker.sock?
+ - No podría ejecutar comandos dentro del contenedor.
+
+2.- ¿Para que sirve el volumen var/jenkins_home?
+ - Para declarar nuestro workspace, con esa url estamos declarando un workspace de jenkins.
+
+3.- ¿Puedo cambiar de puerto?
+ - Si.
+
+4 .-¿Que pasa si no utlizo el usuario root?
+ - No podría escribir ni crear ni eliminar ni actualizar.
+
+¿Còmo instalo make en una imagen?
+
+ - apk add --update make.
+
+5.- ¿Se puede crear un volúmen desde otro volúmen en docker? ¿Porqué?
+ - No, porque no se puede el volumen de un espacio asignado ya no se puede asignar a otro.
+
+6.-¿Para que sirve el comando docker create -v <dir> --name <container> <image>? 
+ - Crea un container en modo apagado.
+
+7.-¿Qué hace el comando docker cp ./ <container>:<dir>?
+ - Copia el directorio hacia otro container.
+
+8.-¿Cómo creo una network usando docker run?
+ - Docker network create <NOMBRE DE RED>
+  - Docker run -it --net="<NOMBRE DE LA RED" -v ...
+9.- ¿Cómo conecto una network a un container? usando docker run
+
+Docker run -it --net="<NOMBRE DE LA RED" -v Docker run -it --net="<NOMBRE DE LA RED" -v ${PWD}/app:app <NOMBRE DE LA IMAGEN> bash
+¿Qué hace docker run -it --rm --volumes-from <container> -w <dir> <image> <command>?
+ - La primera parte ejecuta y crea un contenedor , volumea desde otro contenedor,  el -w crea un directorio de trabajo de una imagen con un comando a ejecutar y luego muere 
+
+
 
