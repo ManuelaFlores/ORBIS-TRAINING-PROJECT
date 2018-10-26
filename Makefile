@@ -1,6 +1,6 @@
 include makefiles/task.mk 
 include makefiles/deploy-ghpages.mk
-
+include makefiles/docker.mk
 ## DEPLOY ##
 
 NAME_IMAGE = manuelaflores16/orbis-training-docker

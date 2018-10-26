@@ -4,6 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "build"
+                sh "make docker-workspace"
+                sh "make docker-install"
             }
         }
         stage('Test') {
