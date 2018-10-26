@@ -5,7 +5,7 @@ NETWORK_NAME = red_docker2
 
 docker-workspace:
 	echo "create docker worspace"
-	docker rm ${VOLUMEN_DOCKER}
+	#docker rm ${VOLUMEN_DOCKER}
 	docker create -v /app --name ${VOLUMEN_DOCKER} alpine
 	docker cp ./ ${VOLUMEN_DOCKER}:/app
 
@@ -13,7 +13,7 @@ docker-install:
 	docker run -t --rm --volumes-from ${VOLUMEN_DOCKER} -w /app ${DOCKER_IMAGE} npm install
 
 docker-start:
-	docker network rm ${NETWORK_NAME}
+	#docker network rm ${NETWORK_NAME}
 	docker network create ${NETWORK_NAME}
 	docker rm -f jenkins_name2
 	docker run -d --net=${NETWORK_NAME} --name jenkins_name2 \
